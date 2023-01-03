@@ -1,14 +1,12 @@
-import './navbar.css'
-import CartWidget from '../cartWidget/cartWidget'
-import Saludo from '../itemListContainer/itemListContainer'
+import './Navbar.css'
+import CartWidget from '../CartWidget/CartWidget'
 const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className='headnav'>
                 <h1>FLOW - Tienda de Ropa</h1>
                 <CartWidget/> 
-            </div>
-            <Saludo color='aqua'/>         
+            </div>       
             <div className='divul'>
                 <ul className='ulnav'>
                     <li className='linav'>Zapatillas</li>

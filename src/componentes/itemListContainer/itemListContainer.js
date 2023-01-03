@@ -1,8 +1,8 @@
-import './itemListContainer.css'
-const Saludo = ({color}) => {
+import './ItemListContainer.css'
+const Saludo = ({color, greeting}) => {
     return (
         <div className='divSaludo' style={{backgroundColor: color}}>
-        <h1 className="saludo">Bienvenido a la mejor tienda de ropa del País !!!</h1>
+        <h1 className="saludo">{greeting}</h1>
         </div>
     )
 }
