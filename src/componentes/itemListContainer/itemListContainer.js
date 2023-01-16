@@ -17,8 +17,6 @@ const ItemListContainer = ({color, greeting}) => {
         })
     }, [])
    
-    // const productsTransArray = products.map(prod => <li>{prod.name}</li>)
-   
     if(loading) {
         return <h1>Cargando..</h1>
     }
@@ -27,9 +25,6 @@ const ItemListContainer = ({color, greeting}) => {
         <div className='divSaludo' style={{backgroundColor: color}}>
         <h1 className="saludo">{greeting}</h1>
         <ItemList products={products}/>
-        {/* <ul>
-            {productsTransArray}
-        </ul> */}
         </div>
     )
 }
