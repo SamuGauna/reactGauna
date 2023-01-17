@@ -11,6 +11,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path='/' element={<ItemListContainer color='aqua' greeting='Bienvenidos a la mejor pagina de ropa !!!'/>} />
+          <Route path='/category/:categoryId' element={<ItemListContainer color='aqua' greeting='Producto filtrado'/>} />
           <Route path='/detail/:productId' element={<ItemDetailContainer />} />
           
        </Routes>
