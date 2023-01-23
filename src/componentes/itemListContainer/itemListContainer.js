@@ -32,9 +32,13 @@ const ItemListContainer = ({color, greeting}) => {
     }
     
     return (
-        <div className='divSaludo' style={{backgroundColor: color}}>
-        <h1 className="saludo">{greeting}</h1>
-        <ItemList products={products}/>
+        <div className='itemListContainer'>
+            <div className='tituloDiv'>
+            <h1 className="tituloh1">{greeting}</h1>
+            </div>
+            <div className='itemLis'>
+            <ItemList products={products}/>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,9 @@
 .cart {
     display: flex;
-   align-items: center;
-   
+    align-items: center;
+    color: #fff;
+    z-index: +1;
+}
+.cartImg {
+    margin-right: 10px;
 }

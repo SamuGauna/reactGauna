@@ -1,9 +1,16 @@
-.saludo {
-    font-size: 20px;
+.itemListContainer {
+    font-size: 30px;
+    font-weight: bold;
     text-align: center;
-
+    color: #fff;
+    background-color: rgb(121, 2, 82);
+    display: flex;
+    flex-direction: column;
 }
-.divSaludo {
-    width: 100%;
-    margin: 20px 0;
+.tituloDiv {
+    padding: 20px;
+}
+.itemList {
+    display: flex;
+    flex-direction: row;
 }

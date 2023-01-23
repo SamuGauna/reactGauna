@@ -5,10 +5,9 @@ const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className='headnav'>
-                <Link to='/'>
-                    <h1>FLOW - Tienda de Ropa</h1>
+                <Link to='/' className='headTittle'>
+                    <h1> F L O W </h1>
                 </Link>
-                <CartWidget/> 
             </div>       
             <div className='divul'>
                 <ul className='ulnav'>
@@ -16,6 +15,7 @@ const Navbar = () => {
                     <Link to={`/category/cap`} className='linav'>Gorras</Link>
                     <Link to={`/category/pants`} className='linav'>Pantalones</Link>
                 </ul>
+                <CartWidget/> 
             </div>
          
            

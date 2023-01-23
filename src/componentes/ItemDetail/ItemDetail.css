@@ -1,0 +1,22 @@
+.itemDetailTittle {
+    padding: 50px;
+    color: #fff;
+    font-weight: bold;
+}
+.itemDetailImg {
+    width: 300px;
+    border-radius: 15px;
+}
+.itemDiv {
+    margin: 30px;
+}
+.itemDetailprice {
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+}
+.itemDetailDes{
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px; 
+}

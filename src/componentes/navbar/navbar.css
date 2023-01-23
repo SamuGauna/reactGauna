@@ -1,34 +1,72 @@
 .navbar {
-    color: #000;
     font-weight: bold;
     display: flex;
+    background-color:rgb(76, 0, 51);
     
 }
-.linav {
-    background-color: black;
-    width: 150px;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin: 10px 15px;
-    padding: 10px;
-    list-style-type: none;
+.divul {
+     width: 100%; 
+    display: flex;
+    justify-content: space-around;
 
 }
-.divul {
-    width: 100%;
-}
 .ulnav {
-     display: flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    color: aqua;
 }
-.linav:hover{
-    background-color: #fff;
-    color: rgb(0, 157, 165);
+.linav {
+ margin: 0px 50px;
+ display: inline-block;
+ padding: 0.5rem 1.8rem;
+ font-size: 16px;
+ font-weight: 700;
+ color: #fff;
+ border: 3px solid rgb(252, 70, 100);
+ cursor: pointer;
+ position: relative;
+ background-color: transparent;
+ text-decoration: none;
+ overflow: hidden;
+ z-index: 1;
+ font-family: inherit;
+
 }
-.headnav {
+.linav::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
+    height: 100%;
+    background-color: rgb(252, 70, 100);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+.linav:hover::before{
+    transform: translateX(0);
+    color: #fff !important;
+}
+
+.headnav {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+.headTittle {
+ text-decoration: none;
+ padding: 0.2em 1em;
+ border: 4px solid #fa725a;
+ transition: ease-in-out 0.3s;
+ background-color: transparent;
+ color: #fa725a;
+ font-weight: bolder;
+ font-size: 16px;
+}
+.headTittle:hover{
+ transform: scale(1.2) rotate(10deg);
+ background-color: #fa725a;
+ color: white;
 }
