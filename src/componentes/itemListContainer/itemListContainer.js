@@ -1,11 +1,12 @@
 import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList'
-import { getProducts, getProductsByCategory } from '../../AsyncMock'
+import { getDocs, collection, query, where } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
+import { db } from '../../services/firebase/firebaseConfig'
 
 import { useParams } from 'react-router-dom'
 
-const ItemListContainer = ({color, greeting}) => {
+const ItemListContainer = ({greeting}) => {
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -14,16 +15,21 @@ const ItemListContainer = ({color, greeting}) => {
 
     useEffect(()=>{
             setLoading(true)
-
-            const funcionCambio = categoryId ? getProductsByCategory : getProducts
-            
-            funcionCambio(categoryId).then(productsFromApi =>{
-                setProducts(productsFromApi)
+            const collectionRef = categoryId
+            ? query(collection(db, 'products'), where('category', '==', categoryId))
+            : collection(db, 'products')
+            getDocs(collectionRef).then(resp => {
+                const productAdapted = resp.docs.map(doc => {
+                    const data = doc.data()
+                    return {id: doc.id, ...data}
+                })
+                setProducts(productAdapted)
             }).catch(error => {
                 console.log(error)
-            }).finally(()=> {
+            }).finally(()=>{
                 setLoading(false)
             })
+            
        
     }, [categoryId])
    

@@ -22,10 +22,26 @@ export const CartProvider = ({children}) => {
         })
         return accu
     }
-
     const totalQuantity = getTotalQuantity()
+    
+    //Eliminar
+    const removeFromCart = (id) => {
+      const newCart = cart.filter((carItem) => carItem.id !== id);
+      setCart(newCart)
+    }
+    
+    //Vaciar el carrito
+    const deleteAll = () => {
+      setCart([])
+    }
+    
+    //Precio Total
+    const totalPrice = () => {
+      return cart.reduce((acumuladorPrice, actualPrice) => acumuladorPrice + actualPrice.quantity * actualPrice.price,0)
+    }
+    
     return (
-        <CartContext.Provider value={{addItem, isInCart, totalQuantity}}>
+        <CartContext.Provider value={{addItem, isInCart, totalQuantity, totalPrice, deleteAll, removeFromCart, cart}}>
             {children}
         </CartContext.Provider>
     )
